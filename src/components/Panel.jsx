@@ -14,7 +14,6 @@ export const Panel = () => {
     useEffect(() => {
         // Obtener la ubicación del usuario al cargar el componente
         document.body.style.backgroundImage = 'linear-gradient(to bottom, rgb(0, 123, 255), rgb(123, 104, 238))';
-        document.body.style.backgroundSize = 'cover';
         obtenerUbicacion();
     }, []); // Se ejecuta solo una vez al montar el componente
 

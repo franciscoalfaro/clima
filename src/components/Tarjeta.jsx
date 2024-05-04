@@ -99,12 +99,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                     <>
                         <div id="weatherResults" className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
 
-                            <div id="city1" className="bg-black bg-opacity-50 p-4 rounded-md shadow-md">
-                                <h2 className="text-xl font-semibold mb-2">Ciudad 1</h2>
-                                <p id="temp1" className="text-gray-300">Temperatura: </p>
-                                <p id="humidity1" className="text-gray-300">Humedad: </p>
-                                <p id="description1" className="text-gray-300">Descripción: </p>
-                            </div>
+
                         </div>
                     </>
 
