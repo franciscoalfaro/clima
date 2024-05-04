@@ -30,7 +30,6 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
     if (infoData) {
         url = "http://openweathermap.org/img/w/";
         iconUrl = url + clima.weather[0].icon + ".png";
-        console.log(clima)
 
         iconUrl3 = url + proximashoras.list[1].weather[0].icon + ".png";
         iconUrl6 = url + proximashoras.list[2].weather[0].icon + ".png";
