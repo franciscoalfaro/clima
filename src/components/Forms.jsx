@@ -5,7 +5,8 @@ export const Forms = ({ nuevaLocalizacion }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (city === "" || !city) return;
+        if (city === "" || !city)
+            return;
 
         nuevaLocalizacion(city);
     }

@@ -10,19 +10,17 @@ export const Panel = () => {
     const [loading, setLoading] = useState(false);
     const [info, setInfo] = useState(false);
     const [localizacion, setLocalizacion] = useState('');
-
+    
     useEffect(() => {
-        // Obtener la ubicación del usuario al cargar el componente
         document.body.style.backgroundImage = 'linear-gradient(to bottom, rgb(0, 123, 255), rgb(123, 104, 238))';
         obtenerUbicacion();
-    }, []); // Se ejecuta solo una vez al montar el componente
+    }, []); 
 
     // Función para obtener la ubicación del usuario
     const obtenerUbicacion = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    console.log(position.coords.latitude)
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
                     obtenerClimaPorCoordenadas(latitude, longitude);

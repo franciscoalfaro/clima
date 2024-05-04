@@ -98,8 +98,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                 ) : (
                     <>
                         <div id="weatherResults" className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
-
-
+                            <p>Sin datos o ubicación inexistente</p>
                         </div>
                     </>
 
