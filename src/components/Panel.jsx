@@ -58,7 +58,7 @@ export const Panel = () => {
             // Cambiar imagen de fondo según el clima
             const weather = data.weather[0].main.toLowerCase();
 
-            document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${weather}')`;
+            document.body.style.backgroundImage = `url('https://source.unsplash.com/600x800/?${weather}')`;
             document.body.style.backgroundSize = 'cover';
         } catch (error) {
             console.error(error);
@@ -91,7 +91,7 @@ export const Panel = () => {
 
             // Cambiar imagen de fondo según el clima
             const weather = climaData.weather[0].main.toLowerCase();
-            document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${weather}')`;
+            document.body.style.backgroundImage = `url('https://source.unsplash.com/600x800/?${weather}')`;
         } catch (error) {
             console.error(error);
             setLoading(false);
