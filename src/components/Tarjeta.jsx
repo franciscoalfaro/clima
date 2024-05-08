@@ -50,8 +50,6 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
         return <Spinner></Spinner>
     }
 
-    console.log(proximashoras)
-
     if (infoData) {
         url = "http://openweathermap.org/img/w/";
         iconUrl = url + clima.weather[0].icon + ".png";
@@ -59,17 +57,12 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
         iconUrl3 = url + proximashoras.list[1].weather[0].icon + ".png";
         iconUrl6 = url + proximashoras.list[2].weather[0].icon + ".png";
         iconUrl9 = url + proximashoras.list[3].weather[0].icon + ".png";
-        console.log(iconUrl3)
 
         proximashorasDia3 = proximashoras.list[1].dt_txt.substring(8, 10) + '/' + proximashoras.list[1].dt_txt.substring(5, 7) + '/' + proximashoras.list[1].dt_txt.substring(0, 4) + ' ' + proximashoras.list[1].dt_txt.substring(11, 13);
         proximashorasDia6 = proximashoras.list[2].dt_txt.substring(8, 10) + '/' + proximashoras.list[2].dt_txt.substring(5, 7) + '/' + proximashoras.list[2].dt_txt.substring(0, 4) + ' ' + proximashoras.list[2].dt_txt.substring(11, 13);
         proximashorasDia9 = proximashoras.list[3].dt_txt.substring(8, 10) + '/' + proximashoras.list[3].dt_txt.substring(5, 7) + '/' + proximashoras.list[3].dt_txt.substring(0, 4) + ' ' + proximashoras.list[3].dt_txt.substring(11, 13);
 
         proximashoras21h = proximashoras.list[5].dt_txt.substring(8, 10) + '/' + proximashoras.list[5].dt_txt.substring(5, 7) + '/' + proximashoras.list[5].dt_txt.substring(0, 4) + ' ' + proximashoras.list[5].dt_txt.substring(11, 13)
-    }
-
-    const handleClick = () => {
-        document.documentElement.classList.toggled('dark')
     }
 
     return (
