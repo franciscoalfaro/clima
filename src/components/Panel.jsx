@@ -3,18 +3,19 @@ import { Forms } from './Forms';
 import { Tarjeta } from './Tarjeta';
 
 export const Panel = () => {
-    const apiKey = import.meta.env.VITE_REACT_APP_API_KEY
+    const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
     const apiUrl = "https://api.openweathermap.org/data/2.5";
     const [clima, setClima] = useState([]);
     const [proximashoras, setProximasHoras] = useState([]);
     const [loading, setLoading] = useState(false);
     const [info, setInfo] = useState(false);
     const [localizacion, setLocalizacion] = useState('');
-    
+    const [background, setBackground] = useState('');
+
+
     useEffect(() => {
-        document.body.style.backgroundImage = 'linear-gradient(to bottom, rgb(0, 123, 255), rgb(123, 104, 238))';
         obtenerUbicacion();
-    }, []); 
+    }, []);
 
     // Función para obtener la ubicación del usuario
     const obtenerUbicacion = () => {
@@ -33,7 +34,6 @@ export const Panel = () => {
             console.error("Geolocalización no es compatible con este navegador.");
         }
     };
-
 
     // Función para obtener el clima por coordenadas
     const obtenerClimaPorCoordenadas = async (lat, lon) => {
@@ -58,8 +58,10 @@ export const Panel = () => {
             // Cambiar imagen de fondo según el clima
             const weather = data.weather[0].main.toLowerCase();
 
-            document.body.style.backgroundImage = `url('https://source.unsplash.com/600x800/?${weather}')`;
+            document.body.style.backgroundImage = `url('https://source.unsplash.com/800x600/?${weather}')`;
             document.body.style.backgroundSize = 'cover';
+
+
         } catch (error) {
             console.error(error);
             setLoading(false);
@@ -91,13 +93,15 @@ export const Panel = () => {
 
             // Cambiar imagen de fondo según el clima
             const weather = climaData.weather[0].main.toLowerCase();
-            document.body.style.backgroundImage = `url('https://source.unsplash.com/600x800/?${weather}')`;
+            document.body.style.backgroundImage = `url('https://source.unsplash.com/800x600/?${weather}')`;
+           
         } catch (error) {
             console.error(error);
             setLoading(false);
             setInfo(false);
         }
     };
+
 
     return (
         <>
@@ -106,9 +110,10 @@ export const Panel = () => {
                 infoData={info}
                 loadingData={loading}
                 clima={clima}
-                proximashoras={proximashoras} />
-
-
+                proximashoras={proximashoras}
+            />
         </>
+
+
     );
 };
