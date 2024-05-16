@@ -145,11 +145,8 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2"> Frase del dia {frase.titulo}</div>
                                 <div className="text-gray-600">{frase.frase}</div>
-                               
                             </div>
                         </div>
-
-
                     </div>
 
                 ) : (
