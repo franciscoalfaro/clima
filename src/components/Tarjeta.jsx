@@ -84,7 +84,6 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                                 <div className="text-gray-600 text-lg font-semibold mb-2">{clima.name}, {clima.sys.country} - {date}</div>
                                 <div className="text-gray-600 text-2xl font-semibold">{(clima.main.temp - 273.15).toFixed(1)}ºC</div>
                                 <div className="text-gray-600">{clima.weather[0].description} <img src={iconUrl} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600 text-sm mt-2">{date}</div>
                                 <div className="text-gray-600">Temperatura máxima: {(clima.main.temp_max - 273.15).toFixed(1)}ºC</div>
                                 <div className="text-gray-600">Temperatura mínima: {(clima.main.temp_min - 273.15).toFixed(1)}ºC</div>
                                 <div className="text-gray-600">Sensación térmica: {(clima.main.feels_like - 273.15).toFixed(1)}ºC</div>
