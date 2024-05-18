@@ -6,6 +6,8 @@ import { dias } from '../../data/frases';
 export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
 
     const [frase, setFrase] = useState({});
+    const kelvinToCelsius = (kelvin) => (kelvin - 273.15).toFixed(1);
+
 
     useEffect(() => {
         // Obtenemos el día actual como un nombre de día de la semana
@@ -69,6 +71,8 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
     }
 
 
+
+
     return (
         <div className="">
 
@@ -82,11 +86,11 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             </div>
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2">{clima.name}, {clima.sys.country} - {date}</div>
-                                <div className="text-gray-600 text-2xl font-semibold">{(clima.main.temp - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600 text-2xl">T° {kelvinToCelsius(clima.main.temp )}ºC</div>
                                 <div className="text-gray-600">{clima.weather[0].description} <img src={iconUrl} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600">Temperatura máxima: {(clima.main.temp_max - 273.15).toFixed(1)}ºC</div>
-                                <div className="text-gray-600">Temperatura mínima: {(clima.main.temp_min - 273.15).toFixed(1)}ºC</div>
-                                <div className="text-gray-600">Sensación térmica: {(clima.main.feels_like - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600">Temperatura máxima: {kelvinToCelsius(clima.main.temp_max )}ºC</div>
+                                <div className="text-gray-600">Temperatura mínima: {kelvinToCelsius(clima.main.temp_min )}ºC</div>
+                                <div className="text-gray-600">Sensación térmica: {kelvinToCelsius(clima.main.feels_like )}ºC</div>
                                 <div className="text-gray-600">Humedad: {clima.main.humidity}%</div>
                                 <div className="text-gray-600">Velocidad del viento: {clima.wind.speed}m/s</div>
                             </div>
@@ -100,7 +104,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2"> {clima.name}, {clima.sys.country} - {proximashorasDia3}h</div>
                                 <div className="text-gray-600">Descripción: {proximashoras.list[1].weather[0].description} <img src={iconUrl3} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600">Temperatura: {(proximashoras.list[1].main.temp - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600">Temperatura: {kelvinToCelsius(proximashoras.list[1].main.temp )}ºC</div>
                             </div>
                         </div>
 
@@ -111,7 +115,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2"> {clima.name}, {clima.sys.country} - {proximashorasDia6}h</div>
                                 <div className="text-gray-600">Descripción: {proximashoras.list[2].weather[0].description} <img src={iconUrl6} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600">Temperatura: {(proximashoras.list[2].main.temp - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600">Temperatura: {kelvinToCelsius(proximashoras.list[2].main.temp )}ºC</div>
                             </div>
                         </div>
 
@@ -122,7 +126,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2"> {clima.name}, {clima.sys.country} - {proximashorasDia9}h</div>
                                 <div className="text-gray-600">Descripción: {proximashoras.list[3].weather[0].description} <img src={iconUrl9} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600">Temperatura: {(proximashoras.list[3].main.temp - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600">Temperatura: {kelvinToCelsius(proximashoras.list[3].main.temp )}ºC</div>
                             </div>
                         </div>
 
@@ -133,7 +137,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2"> {clima.name}, {clima.sys.country} - {proximashoras21h}h</div>
                                 <div className="text-gray-600">Descripción: {proximashoras.list[5].weather[0].description} <img src={iconUrl21} className="inline-block ml-2"></img></div>
-                                <div className="text-gray-600">Temperatura: {(proximashoras.list[5].main.temp - 273.15).toFixed(1)}ºC</div>
+                                <div className="text-gray-600">Temperatura: {kelvinToCelsius(proximashoras.list[5].main.temp )}ºC</div>
                             </div>
                         </div>
 

@@ -10,7 +10,8 @@ export const Panel = () => {
     const [loading, setLoading] = useState(false);
     const [info, setInfo] = useState(false);
     const [localizacion, setLocalizacion] = useState('');
-    const [background, setBackground] = useState('');
+
+ 
 
 
     useEffect(() => {
