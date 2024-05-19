@@ -40,8 +40,6 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
     var iconUrl6 = "";
     var iconUrl9 = "";
 
-    var clas = "";
-
     var iconUrl21 = "";
 
     var proximashorasDia3 = "";
@@ -49,8 +47,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
     var proximashorasDia9 = "";
     var proximashoras21h = "";
     var backgroundClass = 'https://source.unsplash.com/800x600/?'
-  
-
+    
     if (loadingData) {
         return <Spinner></Spinner>
     }
@@ -82,7 +79,7 @@ export const Tarjeta = ({ infoData, loadingData, clima, proximashoras }) => {
                     <div id="weatherResults" className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
 
                         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div className={`bg-cover bg-center h-40`} style={{ backgroundImage: `url(${backgroundClass+clima.weather[0].main})` }}>
+                            <div className={`bg-cover bg-center h-40`} style={{ backgroundImage: `url(${backgroundClass+clima.weather[0].main+','+clima.weather[0].main})` }}>
                             </div>
                             <div className="p-4">
                                 <div className="text-gray-600 text-lg font-semibold mb-2">{clima.name}, {clima.sys.country} - {date}</div>
