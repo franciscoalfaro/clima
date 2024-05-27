@@ -6,7 +6,7 @@ const Spinner = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 5000);
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -53,7 +53,7 @@ const Spinner = () => {
                 </div>
             ) : (
                 <div className="flex items-center justify-center text-green-600">
-                    Listo!
+                   
                 </div>
             )}
         </div>
